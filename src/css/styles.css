@@ -24,13 +24,17 @@ body {
     font-family: monospace;
 }
 
+body :first-child {
+    padding-top: unset;
+}
+
 .test {
     display: flex;
     flex-direction: column;
     width: 100%;
 
     &.failed {
-        padding-bottom: 1em;
+        padding-bottom: 2px;
     }
 
     &.passed {
@@ -80,4 +84,9 @@ body {
     .actual {
         color: #e14831;
     }
+}
+
+.file {
+    width: 100%;
+    padding-top: 16px;
 }

@@ -1,6 +1,9 @@
 <?php
 
-namespace sptf;
+
+namespace sptf\functions;
+
+require_once __DIR__ . "/../structs/Context.php";
 
 use sptf\structs\Context;
 
