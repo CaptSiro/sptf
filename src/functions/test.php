@@ -41,7 +41,7 @@ function test(string $name, callable $suite): void {
         }
     } else {
         echo testHeader(true, $name, $time);
-        echo "<div>$passed assertions</div>";
+        echo "<div class='assertions'>$passed assertions</div>";
     }
 
     echo "</div>";

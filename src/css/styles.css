@@ -6,7 +6,6 @@
 
 html {
     background-color: #282828;
-    color: #faf0c5;
 }
 
 
@@ -87,6 +86,11 @@ body :first-child {
 }
 
 .file {
+    color: #faf0c5;
     width: 100%;
     padding-top: 16px;
+}
+
+.assertions {
+    color: #faf0c5;
 }
