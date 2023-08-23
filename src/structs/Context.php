@@ -37,7 +37,8 @@ class Context {
 
 
     static function init(): void {
-        ob_clean();
+        $contents = ob_get_clean();
+
         echo "<!doctype html>
             <html lang='en'>
             <head>
@@ -49,6 +50,10 @@ class Context {
                 <style>". file_get_contents(realpath(__DIR__ . '/../css/styles.css')) ."</style>
             </head>
             <body>";
+
+        if ($contents !== false) {
+            echo $contents;
+        }
 
         self::$isInitialized = true;
     }
