@@ -95,3 +95,8 @@ body :first-child {
 .assertions {
     color: #faf0c5;
 }
+
+.xdebug-var-dump {
+    background-color: #faf0c5;
+    padding: 4px;
+}
