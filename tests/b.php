@@ -1,14 +1,16 @@
 <?php
 
-use function sptf\functions\expect;
+use function sptf\functions\fail;
 use function sptf\functions\test;
 
-test("one", function () {
-    expect(3)->toBe(3);
-    expect("hey")->toBe("hey");
+test("pass", function () {
+    pass();
 });
 
-test("two", function () {
-    expect(3)->toBe(3);
-    expect("poggy")->toBe("POGGY");
+test("fail without reason", function () {
+    fail();
+});
+
+test("fail with reason", function () {
+    fail("Some reason");
 });

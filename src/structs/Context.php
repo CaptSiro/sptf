@@ -2,8 +2,12 @@
 
 namespace sptf\structs;
 
+use sptf\interfaces\Assertion;
+
+require_once __DIR__ . "/../interfaces/Assertion.php";
+
 class Context {
-    /** @var Expectation[] $assertions */
+    /** @var Assertion[] $assertions */
     static private array $assertions = [];
     static private float $start = 0.;
     static private float $end = 0.;
@@ -13,7 +17,7 @@ class Context {
 
 
     /**
-     * @return Expectation[]
+     * @return Assertion[]
      */
     static function getAssertions(): array {
         return self::$assertions;
@@ -21,8 +25,8 @@ class Context {
 
 
 
-    static function assert(Expectation $expectation): void {
-        self::$assertions[] = $expectation;
+    static function assert(Assertion $assertion): void {
+        self::$assertions[] = $assertion;
     }
 
 

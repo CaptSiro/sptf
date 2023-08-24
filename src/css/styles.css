@@ -80,7 +80,8 @@ body :first-child {
         color: #75a47f;
     }
 
-    .actual {
+    .actual,
+    .assertion-failed {
         color: #e14831;
     }
 }

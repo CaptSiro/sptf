@@ -18,17 +18,14 @@ function test(string $name, callable $suite): void {
 
     $failed = [];
     $passed = 0;
-    $i = -1;
 
     foreach (Context::getAssertions() as $assertion) {
-        $i++;
-
-        if ($assertion->perform()) {
+        if ($assertion->result()) {
             $passed++;
             continue;
         }
 
-        $failed[] = $assertion->getErrorMessage($i);
+        $failed[] = $assertion->errorHTML();
     }
 
     $class = empty($failed) ? 'passed' : 'failed';

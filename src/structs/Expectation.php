@@ -5,14 +5,23 @@ namespace sptf\structs;
 
 
 use Closure;
+use sptf\interfaces\Assertion;
 
-class Expectation {
+require_once __DIR__ . "/../interfaces/Assertion.php";
+
+class Expectation implements Assertion {
     private mixed $actual;
     private Closure $compare;
+    private readonly int $line;
 
 
 
-    function __construct(private readonly mixed $expected, private readonly int $line) {}
+    function __construct(
+        private readonly mixed $expected,
+        array $trace
+    ) {
+        $this->line = $trace[0]['line'];
+    }
 
 
 
@@ -30,7 +39,7 @@ class Expectation {
 
 
 
-    function perform(): bool {
+    function result(): bool {
         $compare = $this->compare ?? fn($a, $b) => $a === $b;
 
         return boolval($compare($this->expected, $this->actual));
@@ -38,7 +47,7 @@ class Expectation {
 
 
 
-    function getErrorMessage(): string {
+    function errorHTML(): string {
         return "
             <div class='index'>[$this->line]</div>
             <div class='expected'>Expected: ". json_encode($this->expected) ."</div>
