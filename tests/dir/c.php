@@ -3,12 +3,23 @@
 use function sptf\functions\expect;
 use function sptf\functions\test;
 
-test("one", function () {
-    expect(3)->toBe(3);
-    expect("hey")->toBe("hey");
+test("call 4 times", function () {
+    $fn = func(fn() => 0);
+
+    for ($i = 0; $i < 4; $i++) {
+        $fn();
+    }
+
+    expect($fn->invokeCount)->toBe(4);
+    expect($fn->hasBeenInvoked())->toBe(true);
 });
 
-test("two", function () {
-    expect(3)->toBe(3);
-    expect("poggy")->toBe("poggy");
+test("catch throw in function", function () {
+    $fn = func(function () {
+        throw new Exception();
+    });
+
+    $fn();
+
+    expect($fn->hasThrown)->toBe(true);
 });
