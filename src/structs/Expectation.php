@@ -6,10 +6,12 @@ namespace sptf\structs;
 
 use Closure;
 use sptf\interfaces\Assertion;
+use sptf\interfaces\Expect;
 
 require_once __DIR__ . "/../interfaces/Assertion.php";
+require_once __DIR__ . "/../interfaces/Expect.php";
 
-class Expectation implements Assertion {
+class Expectation implements Assertion, Expect {
     private mixed $actual;
     private Closure $compare;
     private readonly int $line;
