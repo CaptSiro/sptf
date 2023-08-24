@@ -100,3 +100,8 @@ body :first-child {
     background-color: #faf0c5;
     padding: 4px;
 }
+
+.xdebug-var-dump {
+    background-color: #faf0c5;
+    padding: 4px;
+}
