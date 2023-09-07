@@ -1,11 +1,15 @@
 <?php
 
+
+
 namespace sptf\functions;
 
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use SplFileInfo;
 use sptf\structs\Context;
+
+
 
 function test_directory($dir): void {
     Context::init();

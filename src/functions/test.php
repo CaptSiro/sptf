@@ -1,10 +1,14 @@
 <?php
 
+
+
 namespace sptf\functions;
 
 require_once __DIR__ . "/../structs/Context.php";
 
 use sptf\structs\Context;
+
+
 
 function test(string $name, callable $suite): void {
     Context::startSuite();
