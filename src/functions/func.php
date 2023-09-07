@@ -1,5 +1,8 @@
 <?php
 
+namespace sptf\functions;
+
+use Closure;
 use sptf\structs\Func;
 
 require_once __DIR__ . "/../structs/Func.php";

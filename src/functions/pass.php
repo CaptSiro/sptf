@@ -1,5 +1,7 @@
 <?php
 
+namespace sptf\functions;
+
 use sptf\structs\Context;
 use sptf\structs\Result;
 

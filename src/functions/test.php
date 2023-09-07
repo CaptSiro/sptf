@@ -1,6 +1,5 @@
 <?php
 
-
 namespace sptf\functions;
 
 require_once __DIR__ . "/../structs/Context.php";
